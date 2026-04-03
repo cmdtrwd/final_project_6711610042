@@ -1,0 +1,32 @@
+$font-main: "Poppins", sans-serif;
+
+$color-bg: #fff8f2;
+$color-surface: rgba(255, 255, 255, 0.78);
+$color-white: #ffffff;
+$color-text: #5b4c58;
+$color-heading: #7a5862;
+$color-subtext: #8f7b84;
+$color-border: rgba(222, 164, 178, 0.32);
+
+$color-pink-500: #df8da8;
+$color-pink-light: #ffe9ef;
+$color-pink-dark: #c97892;
+$color-sub: $color-subtext;
+
+$gradient-main: linear-gradient(135deg, #ffe9ef 0%, #fff6c8 52%, #fffdf6 100%);
+$gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 248, 214, 0.92) 100%);
+$gradient-accent: linear-gradient(135deg, #f8b8ca 0%, #ffd970 100%);
+
+$shadow-soft: 0 14px 40px rgba(222, 168, 181, 0.18);
+$shadow-card: 0 18px 30px rgba(214, 162, 122, 0.14);
+$shadow-hover: 0 22px 42px rgba(223, 141, 168, 0.24);
+
+$radius-xl: 32px;
+$radius-medium: 20px;
+$radius-small: 14px;
+
+$container-width: 1180px;
+$transition-main: 0.32s ease;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1100px;

@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piggy Planner | Tracker</title>
+  <meta name="description" content="Piggy Planner tracker page for schedule, health, and expense planning.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header compact-header">
+      <div class="container header-container">
+        <a class="brand brand-small" href="index.html" aria-label="Piggy Planner Home">
+          <img class="brand-logo" src="images/pig-logo.png" alt="Piggy Planner logo">
+          <div class="brand-copy">
+            <span class="brand-kicker">Track your lovely day</span>
+            <h1>Piggy Planner</h1>
+          </div>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+
+        <nav class="main-nav" id="siteNav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="tracker.html">Tracker</a>
+          <a class="nav-link" href="progress.html">Progress</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section class="page-banner">
+        <div class="container section-panel banner-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Daily Tracker</span>
+              <h2 class="section-title">Plan tasks with time, details, and clean structure</h2>
+            </div>
+            <p class="section-text">Add tasks, habits, and expenses in a simple format so everything stays easy to scan and update.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tracker-section">
+        <div class="container">
+          <div class="flip-card-grid">
+            <article class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-face flip-card-front card">
+                  <span class="flip-icon" aria-hidden="true">Schedule</span>
+                  <h3 class="card-title">Schedule</h3>
+                  <p class="card-text">Track your daily tasks</p>
+                </div>
+                <div class="flip-card-face flip-card-back card">
+                  <h3 class="card-title">Schedule</h3>
+                  <p class="flip-stat">Tasks today: 5</p>
+                  <p class="flip-stat">Completed: 3</p>
+                  <p class="flip-stat">Remaining: 2</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-face flip-card-front card">
+                  <span class="flip-icon" aria-hidden="true">Health</span>
+                  <h3 class="card-title">Health</h3>
+                  <p class="card-text">Track habits and activity</p>
+                </div>
+                <div class="flip-card-face flip-card-back card">
+                  <h3 class="card-title">Health</h3>
+                  <p class="flip-stat">Water: 5/8</p>
+                  <p class="flip-stat">Steps: 6200</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-face flip-card-front card">
+                  <span class="flip-icon" aria-hidden="true">Expense</span>
+                  <h3 class="card-title">Expense</h3>
+                  <p class="card-text">Manage your spending</p>
+                </div>
+                <div class="flip-card-face flip-card-back card">
+                  <h3 class="card-title">Expense</h3>
+                  <p class="flip-stat">Spent today: 350 THB</p>
+                  <p class="flip-stat">Budget left: 650 THB</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="tracker-feature-grid" aria-label="Tracker highlights">
+            <article class="card tracker-feature-card tracker-feature-card-wide">
+              <span class="summary-tag">Daily Rhythm</span>
+              <h3 class="card-title">Build a gentle routine for the day</h3>
+              <p class="card-text">Use this space as a quick reminder row for the habits and checks you want to keep in mind between morning and evening.</p>
+              <div class="tracker-pill-list" aria-label="Daily rhythm highlights">
+                <span class="tracker-pill">Morning focus</span>
+                <span class="tracker-pill">Healthy reset</span>
+                <span class="tracker-pill">Budget check</span>
+              </div>
+            </article>
+
+            <article class="card tracker-feature-card tracker-feature-card-metrics">
+              <span class="summary-tag">Quick Balance</span>
+              <h3 class="card-title">Keep your key numbers nearby</h3>
+              <p class="card-text">Use this area for short totals and check-ins so you can review your day without scrolling through every list first.</p>
+              <div class="tracker-feature-metrics">
+                <div>
+                  <strong>3</strong>
+                  <span>Core modules</span>
+                </div>
+                <div>
+                  <strong>2</strong>
+                  <span>Spotlight cards</span>
+                </div>
+                <div>
+                  <strong>9</strong>
+                  <span>Items tracked</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="card-grid tracker-grid">
+            <article class="card tracker-card" id="schedule">
+              <div class="tracker-head">
+                <div class="tracker-head-visual">
+                  <img src="images/PigTask.png" alt="Piggy planning tasks">
+                </div>
+                <div>
+                  <h3 class="card-title">Schedule</h3>
+                  <p class="card-text">Build a clean daily timeline for classes, deadlines,  priority work.</p>
+                </div>
+              </div>
+
+              <form class="tracker-form" data-target="scheduleList">
+                <label class="sr-only" for="scheduleTime">Schedule time</label>
+                <input class="tracker-input tracker-time-input" id="scheduleTime" name="taskTime" type="time">
+                <label class="sr-only" for="scheduleTask">Schedule task</label>
+                <input class="tracker-input tracker-task-input" id="scheduleTask" name="taskText" type="text"
+                  placeholder="Add a schedule task" maxlength="60">
+                <button class="tracker-add-btn" type="submit">Add Task</button>
+              </form>
+
+              <ul class="tracker-list" id="scheduleList">
+                <li class="tracker-item">
+                  <p class="task-time">08:30</p>
+                  <p class="task-text">UI design class and note review</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">13:00</p>
+                  <p class="task-text">Group meeting and assignment update</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">19:30</p>
+                  <p class="task-text">Review tomorrow's work and prepare materials</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card tracker-card" id="health">
+              <div class="tracker-head">
+                <div class="tracker-head-visual">
+                  <img src="images/PigWater.png" alt="Piggy drinking water">
+                </div>
+                <div>
+                  <h3 class="card-title">Health</h3>
+                  <p class="card-text">Log wellness habits in the same calm, structured layout.</p>
+                </div>
+              </div>
+
+              <form class="tracker-form" data-target="healthList">
+                <label class="sr-only" for="healthTime">Health time</label>
+                <input class="tracker-input tracker-time-input" id="healthTime" name="taskTime" type="time">
+                <label class="sr-only" for="healthTask">Health task</label>
+                <input class="tracker-input tracker-task-input" id="healthTask" name="taskText" type="text"
+                  placeholder="Add a health task" maxlength="60">
+                <button class="tracker-add-btn" type="submit">Add Habit</button>
+              </form>
+
+              <ul class="tracker-list" id="healthList">
+                <li class="tracker-item">
+                  <p class="task-time">07:00</p>
+                  <p class="task-text">Drink 2 glasses of water after waking up</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">18:00</p>
+                  <p class="task-text">Exercise for 30 minutes</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">22:00</p>
+                  <p class="task-text">Sleep before 11 PM</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card tracker-card" id="expense">
+              <div class="tracker-head">
+                <div class="tracker-head-visual">
+                  <img src="images/PigCoin.png" alt="Piggy saving money">
+                </div>
+                <div>
+                  <h3 class="card-title">Expense</h3>
+                  <p class="card-text">Record purchases with time and detail for a smarter money overview.</p>
+                </div>
+              </div>
+
+              <form class="tracker-form" data-target="expenseList">
+                <label class="sr-only" for="expenseTime">Expense time</label>
+                <input class="tracker-input tracker-time-input" id="expenseTime" name="taskTime" type="time">
+                <label class="sr-only" for="expenseTask">Expense item</label>
+                <input class="tracker-input tracker-task-input" id="expenseTask" name="taskText" type="text"
+                  placeholder="Add an expense item" maxlength="60">
+                <button class="tracker-add-btn" type="submit">Add Expense</button>
+              </form>
+
+              <ul class="tracker-list" id="expenseList">
+                <li class="tracker-item">
+                  <p class="task-time">08:10</p>
+                  <p class="task-text">Breakfast 55 THB</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">12:40</p>
+                  <p class="task-text">BTS fare 42 THB</p>
+                </li>
+                <li class="tracker-item">
+                  <p class="task-time">19:15</p>
+                  <p class="task-text">Dinner 79 THB</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="footer-kicker">Piggy Planner</span>
+        <p class="footer-text">Piggy Planner Tracker</p>
+        <p class="footer-note">Add, review, and update your schedule, habits, and spending anytime through the tracker page.</p>
+        <p class="footer-copy">&copy; 2026 Piggy Planner. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/tracker-input.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>
+

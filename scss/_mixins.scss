@@ -1,0 +1,44 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section-box {
+  background: $color-surface;
+  backdrop-filter: blur(16px);
+  border: 1px solid $color-border;
+  padding: 28px 22px;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-soft;
+}
+
+@mixin card-style {
+  background: $gradient-card;
+  border-radius: $radius-medium;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 22px;
+  box-shadow: $shadow-card;
+  transition: $transition-main;
+}
+
+@mixin hover-lift {
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-hover;
+  }
+}
+
+@mixin button-style {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: $gradient-accent;
+  color: $color-text;
+  padding: 12px 20px;
+  border-radius: $radius-small;
+  font-weight: 600;
+  transition: $transition-main;
+}

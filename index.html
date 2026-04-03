@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piggy Planner | Smart Daily Dashboard</title>
+  <meta name="description"
+    content="Piggy Planner is a cute productivity dashboard for scheduling tasks, tracking healthy habits, and managing daily spending.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-container">
+        <a class="brand" href="index.html" aria-label="Piggy Planner homepage">
+          <img class="brand-logo" src="images/pig-logo.png" alt="Piggy Planner logo">
+          <div class="brand-copy">
+            <span class="brand-kicker">Cute productivity dashboard</span>
+            <h1>Piggy Planner</h1>
+            <p>Plan your day, protect your energy, and keep every small win in one cheerful place.</p>
+          </div>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+
+        <nav class="main-nav" id="siteNav" aria-label="Main navigation">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="tracker.html">Tracker</a>
+          <a class="nav-link" href="progress.html">Progress</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section class="hero-section">
+        <div class="container hero-panel">
+          <div class="hero-copy">
+            <span class="eyebrow">Daily clarity for busy students</span>
+            <h2 class="hero-title">A joyful dashboard for schedule, health, and expense habits.</h2>
+            <p class="hero-text">
+              Piggy Planner turns everyday planning into a calm, polished routine. Organize important tasks, keep
+              healthy rituals visible,
+              and understand your spending with a friendly interface designed for both mobile and desktop use.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="tracker.html">Open Tracker</a>
+              <a class="secondary-btn" href="progress.html">View Progress</a>
+            </div>
+          </div>
+
+          <aside class="hero-highlight card">
+            <div class="snapshot-top">
+              <div class="mascot-badge">
+                <img src="images/pig-logo.png" alt="Piggy Planner mascot">
+              </div>
+              <span class="snapshot-tag">Today overview</span>
+            </div>
+            <h3 class="card-title">Today&rsquo;s Snapshot</h3>
+            <p class="card-text">A quick view of the three modules that shape a focused, balanced day.</p>
+            <div class="snapshot-list">
+              <div class="snapshot-row">
+                <span>Schedule</span>
+                <strong>8 planned</strong>
+              </div>
+              <div class="snapshot-row">
+                <span>Health</span>
+                <strong>3 habits active</strong>
+              </div>
+              <div class="snapshot-row">
+                <span>Expense</span>
+                <strong>320 THB logged</strong>
+              </div>
+            </div>
+            <div class="mini-stats">
+              <div>
+                <strong>08</strong>
+                <span>Scheduled tasks</span>
+              </div>
+              <div>
+                <strong>2.1 L</strong>
+                <span>Water tracked</span>
+              </div>
+              <div>
+                <strong>320</strong>
+                <span>THB recorded</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="tips-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Daily Tips</span>
+              <h2 class="section-title">Small actions, better days</h2>
+            </div>
+            <p class="section-text">Swipe for quick reminders you can follow right away to stay steady, hydrated, and on track.</p>
+          </div>
+
+          <div class="tips-carousel" id="tipsCarousel">
+            <button class="carousel-control carousel-prev" type="button" aria-label="Previous tip">&#8249;</button>
+
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="tipsTrack">
+                <article class="card tip-card">
+                  <p class="tip-text">Save 20 THB today</p>
+                </article>
+                <article class="card tip-card">
+                  <p class="tip-text">Finish 2 important tasks</p>
+                </article>
+                <article class="card tip-card">
+                  <p class="tip-text">Drink 8 glasses of water</p>
+                </article>
+                <article class="card tip-card">
+                  <p class="tip-text">Walk at least 5000 steps</p>
+                </article>
+                <article class="card tip-card">
+                  <p class="tip-text">Review today&rsquo;s expenses</p>
+                </article>
+              </div>
+            </div>
+
+            <button class="carousel-control carousel-next" type="button" aria-label="Next tip">&#8250;</button>
+          </div>
+
+          <div class="carousel-dots" id="carouselDots" aria-label="Tips navigation"></div>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Main Sections</span>
+              <h2 class="section-title">Three spaces for a balanced routine</h2>
+            </div>
+            <p class="section-text">Open the section you need and jump straight into planning your schedule, checking habits, or logging spending.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="card dashboard-card schedule-card">
+              <div class="module-visual">
+                <img src="images/PigTask.png" alt="Piggy planning tasks">
+              </div>
+              <div class="card-icon" aria-hidden="true">Schedule</div>
+              <h3 class="card-title">Schedule</h3>
+              <p class="card-text">Map out deadlines, classes, and personal plans in a clear time-based flow that keeps
+                your day manageable.</p>
+              <ul class="feature-points">
+                <li>Prioritized daily timeline</li>
+                <li>Simple task entry flow</li>
+                <li>Fast visual scanning</li>
+              </ul>
+              <a href="tracker.html#schedule" class="card-btn">Open Schedule</a>
+            </article>
+
+            <article class="card dashboard-card health-card">
+              <div class="module-visual">
+                <img src="images/PigWater.png" alt="Piggy drinking water">
+              </div>
+              <div class="card-icon" aria-hidden="true">Health</div>
+              <h3 class="card-title">Health</h3>
+              <p class="card-text">Keep personal wellness visible with habit tracking for water, movement, sleep, and
+                daily energy rituals.</p>
+              <ul class="feature-points">
+                <li>Habit-focused task layout</li>
+                <li>Wellness reminders</li>
+                <li>Gentle routine building</li>
+              </ul>
+              <a href="tracker.html#health" class="card-btn">Open Health</a>
+            </article>
+
+            <article class="card dashboard-card expense-card">
+              <div class="module-visual">
+                <img src="images/PigCoin.png" alt="Piggy saving money">
+              </div>
+              <div class="card-icon" aria-hidden="true">Expense</div>
+              <h3 class="card-title">Expense</h3>
+              <p class="card-text">Understand where your money goes each day and build smarter spending habits without
+                using a complex finance app.</p>
+              <ul class="feature-points">
+                <li>Quick spending notes</li>
+                <li>Readable daily entries</li>
+                <li>Budget awareness</li>
+              </ul>
+              <a href="tracker.html#expense" class="card-btn">Open Expense</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Daily Progress</span>
+              <h2 class="section-title">A soft summary of today&rsquo;s momentum</h2>
+            </div>
+            <p class="section-text">Check today's progress here, then open the Progress page when you want a fuller view of your week and focus time.</p>
+          </div>
+
+          <div class="progress-list">
+            <div class="progress-item">
+              <div class="progress-meta">
+                <span class="progress-label">Task completion</span>
+                <span class="progress-value">78%</span>
+              </div>
+              <div class="progress-bar">
+                <span class="progress-fill fill-schedule"></span>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-meta">
+                <span class="progress-label">Health routine</span>
+                <span class="progress-value">66%</span>
+              </div>
+              <div class="progress-bar">
+                <span class="progress-fill fill-health"></span>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-meta">
+                <span class="progress-label">Expense logging</span>
+                <span class="progress-value">82%</span>
+              </div>
+              <div class="progress-bar">
+                <span class="progress-fill fill-expense"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="footer-kicker">Piggy Planner</span>
+        <p class="footer-text">A soft productivity dashboard for planning, habits, and daily spending.</p>
+        <p class="footer-note">Use Piggy Planner to organize your day, keep healthy routines visible, and log spending in one calm space.</p>
+        <p class="footer-copy">&copy; 2026 Piggy Planner. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/carousel.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>
+

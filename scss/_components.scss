@@ -1,0 +1,692 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  @include card-style;
+  position: relative;
+  overflow: hidden;
+  transition: all $transition-main;
+
+  @include hover-lift;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transition: 0.6s;
+  }
+
+  &:hover::before {
+    left: 120%;
+  }
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: $color-heading;
+  transition: color $transition-main;
+  line-height: 1.25;
+}
+
+.card-text {
+  color: $color-subtext;
+  font-size: 0.95rem;
+}
+
+.card-number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $color-pink-500;
+  margin-top: 10px;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.module-visual,
+.summary-visual {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 243, 208, 0.88) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.module-visual::after,
+.summary-visual::after,
+.tracker-head-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.42), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  pointer-events: none;
+}
+
+.module-visual img,
+.summary-visual img {
+  width: min(100%, 180px);
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 24px;
+  filter: drop-shadow(0 12px 18px rgba(223, 141, 168, 0.18));
+  transition: transform $transition-main;
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 72%, rgba(0, 0, 0, 0.88) 86%, transparent 100%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 72%, rgba(0, 0, 0, 0.88) 86%, transparent 100%);
+}
+
+.card-icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  transition: transform $transition-main;
+}
+
+.feature-points {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.feature-points li {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.64);
+  color: $color-text;
+  font-size: 0.92rem;
+}
+
+.card-btn,
+.timer-btn,
+.primary-btn,
+.secondary-btn,
+.ghost-btn {
+  @include button-style;
+}
+
+.card-btn {
+  margin-top: auto;
+  transform: translateY(0);
+}
+
+.dashboard-card:hover .card-icon {
+  transform: translateY(-6px) scale(1.08);
+}
+
+.dashboard-card:hover .module-visual img,
+.summary-card:hover .summary-visual img {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.dashboard-card:hover .card-title {
+  color: $color-pink-500;
+}
+
+.dashboard-card:hover .card-btn {
+  transform: translateY(-2px);
+}
+
+.tips-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.tip-card {
+  flex: 0 0 100%;
+  min-height: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tip-text {
+  color: $color-heading;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.carousel-control {
+  @include button-style;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.carousel-control:hover {
+  transform: translateY(-2px);
+  box-shadow: $shadow-soft;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(223, 141, 168, 0.32);
+  transition: transform $transition-main, background-color $transition-main, box-shadow $transition-main;
+}
+
+.carousel-dot:hover {
+  transform: scale(1.08);
+}
+
+.carousel-dot.active {
+  background: $color-pink-500;
+  box-shadow: 0 0 0 4px rgba(248, 184, 202, 0.18);
+}
+
+.flip-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.flip-card {
+  perspective: 1200px;
+  min-height: 220px;
+  outline: none;
+  transform: translateZ(0);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-height: 220px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg) translateZ(1px);
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.95) 0%, rgba(255, 239, 214, 0.92) 100%);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg) translateZ(1px);
+  background: linear-gradient(135deg, rgba(248, 184, 202, 0.98) 0%, rgba(255, 217, 112, 0.96) 100%);
+  border-color: rgba(223, 141, 168, 0.28);
+  box-shadow: 0 20px 36px rgba(223, 141, 168, 0.22);
+}
+
+.flip-card-back .card-title,
+.flip-card-back .flip-stat {
+  color: $color-heading;
+}
+
+.flip-card:hover .flip-card-back,
+.flip-card:focus .flip-card-back,
+.flip-card:focus-within .flip-card-back {
+  background: linear-gradient(135deg, rgba(255, 199, 220, 0.99) 0%, rgba(255, 225, 145, 0.97) 100%);
+}
+
+.flip-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.flip-stat {
+  color: $color-text;
+  font-weight: 600;
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.progress-label,
+.progress-value {
+  font-weight: 600;
+  color: $color-heading;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.84);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: $gradient-accent;
+  border-radius: 999px;
+  animation: growBar 1.1s ease;
+}
+
+.fill-schedule { width: 78%; }
+.fill-health { width: 66%; }
+.fill-expense { width: 82%; }
+
+.tracker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
+  height: 100%;
+}
+
+.tracker-grid {
+  align-items: stretch;
+}
+
+.tracker-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.tracker-feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+}
+
+.tracker-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tracker-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: $color-heading;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 10px 18px rgba(223, 141, 168, 0.1);
+}
+
+.tracker-feature-metrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.tracker-feature-metrics div {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.68);
+  text-align: center;
+}
+
+.tracker-feature-metrics strong {
+  display: block;
+  color: $color-heading;
+  font-size: 1.35rem;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tracker-feature-metrics span {
+  color: $color-subtext;
+  font-size: 0.84rem;
+}
+
+.tracker-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+}
+
+.tracker-head-visual {
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 241, 210, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.tracker-head-visual img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 18px;
+  filter: drop-shadow(0 8px 12px rgba(223, 141, 168, 0.16));
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.88) 85%, transparent 100%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.88) 85%, transparent 100%);
+}
+
+.tracker-list {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  flex: 1;
+}
+
+.tracker-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 8px 0 2px;
+}
+
+.tracker-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(223, 141, 168, 0.28);
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: $color-text;
+  outline: none;
+  transition: box-shadow $transition-main, border-color $transition-main;
+
+  &:focus {
+    border-color: rgba(223, 141, 168, 0.9);
+    box-shadow: 0 0 0 4px rgba(248, 184, 202, 0.22);
+  }
+}
+
+.tracker-input::placeholder {
+  color: rgba(122, 88, 98, 0.72);
+}
+
+.tracker-time-input,
+.tracker-task-input {
+  min-height: 48px;
+}
+
+.tracker-add-btn {
+  @include button-style;
+  justify-self: start;
+  min-width: 132px;
+}
+
+.tracker-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 4px 12px;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.68);
+  border-radius: 16px;
+  color: $color-text;
+  transition: all $transition-main;
+
+  &:hover {
+    transform: translateX(6px);
+    background-color: rgba(255, 255, 255, 0.92);
+  }
+}
+
+.tracker-item-new {
+  border: 1px dashed rgba(223, 141, 168, 0.35);
+}
+
+.task-time {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $color-heading;
+  margin-bottom: 5px;
+}
+
+.task-text {
+  color: #7b6969;
+  grid-column: auto;
+}
+
+.tracker-delete-btn {
+  align-self: center;
+  grid-column: auto;
+  grid-row: auto;
+  justify-self: start;
+  margin-top: 6px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(223, 141, 168, 0.32);
+  background: rgba(255, 255, 255, 0.86);
+  color: $color-heading;
+  font-weight: 600;
+  transition: all $transition-main;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 241, 245, 0.96);
+    box-shadow: $shadow-soft;
+  }
+}
+
+.summary-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.84);
+  color: $color-pink-500;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 22px rgba(223, 141, 168, 0.12);
+}
+
+.summary-card .card-title {
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin-top: -2px;
+}
+
+.summary-card .card-number {
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.summary-card .card-text {
+  line-height: 1.65;
+}
+
+.chart-card {
+  min-height: 260px;
+  padding-top: 30px;
+}
+
+.chart-bars {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: end;
+  gap: 10px;
+  min-height: 200px;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 44px;
+  border-radius: 18px 18px 10px 10px;
+  background: $gradient-accent;
+  animation: riseBar 1s ease;
+}
+
+.h-58 { height: 58%; }
+.h-64 { height: 64%; }
+.h-72 { height: 72%; }
+.h-78 { height: 78%; }
+.h-84 { height: 84%; }
+.h-88 { height: 88%; }
+.h-92 { height: 92%; }
+
+.timer-card {
+  text-align: center;
+  padding-block: 28px;
+}
+
+.timer-label {
+  color: $color-subtext;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timer-display {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $color-pink-500;
+  margin: 8px 0 10px;
+  letter-spacing: 2px;
+}
+
+.timer-status {
+  color: $color-subtext;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.secondary-btn,
+.alt-btn {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid rgba(223, 141, 168, 0.4);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.ghost-btn:hover,
+.timer-btn:hover,
+.card-btn:hover,
+.tracker-add-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: $shadow-soft;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes riseBar {
+  from {
+    height: 0;
+  }
+}
+
+@keyframes panelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

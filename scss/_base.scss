@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-main;
+  background:
+    radial-gradient(circle at top left, rgba(255, 223, 234, 0.9), transparent 32%),
+    radial-gradient(circle at right top, rgba(255, 239, 176, 0.9), transparent 28%),
+    $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.page-shell {
+  overflow: hidden;
+}
+
+.site-main {
+  padding: 28px 0 48px;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  color: $color-heading;
+  line-height: 1.2;
+}
+
+.section-text {
+  color: $color-subtext;
+  font-size: 1rem;
+  max-width: 660px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.68);
+  color: $color-pink-500;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piggy Planner | Progress and Focus</title>
+  <meta name="description"
+    content="Monitor daily progress, view visual summaries, and use a built-in Pomodoro timer with Piggy Planner.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header compact-header">
+      <div class="container header-container">
+        <a class="brand brand-small" href="index.html" aria-label="Piggy Planner homepage">
+          <img class="brand-logo" src="images/pig-logo.png" alt="Piggy Planner logo">
+          <div class="brand-copy">
+            <span class="brand-kicker">Progress and focus mode</span>
+            <h1>Piggy Planner</h1>
+          </div>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+
+        <nav class="main-nav" id="siteNav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="tracker.html">Tracker</a>
+          <a class="nav-link active" href="progress.html">Progress</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section class="page-banner">
+        <div class="container section-panel banner-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Weekly dashboard</span>
+              <h2 class="section-title">See your progress, then protect your focus.</h2>
+            </div>
+            <p class="section-text">Review how your week is going, then start a focus session when you want a calm block of uninterrupted time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Today Summary</span>
+              <h2 class="section-title">Today at a glance</h2>
+            </div>
+            <p class="section-text">See your schedule, health, and spending updates together in one quick summary.</p>
+          </div>
+
+          <div class="card-grid summary-grid">
+            <article class="card summary-card">
+              <div class="summary-visual">
+                <img src="images/PigTask.png" alt="Piggy planning tasks">
+              </div>
+              <span class="summary-tag">Schedule</span>
+              <h3 class="card-title">Task completion</h3>
+              <p class="card-number">8 / 10</p>
+              <p class="card-text">Most planned work has been completed, with only two lower-priority tasks left for the
+                evening block.</p>
+            </article>
+
+            <article class="card summary-card">
+              <div class="summary-visual">
+                <img src="images/PigWater.png" alt="Piggy drinking water">
+              </div>
+              <span class="summary-tag">Health</span>
+              <h3 class="card-title">Routine score</h3>
+              <p class="card-number">75%</p>
+              <p class="card-text">Water, steps, and rest targets are moving in the right direction, with one final
+                check-in still to finish.</p>
+            </article>
+
+            <article class="card summary-card">
+              <div class="summary-visual">
+                <img src="images/PigCoin.png" alt="Piggy saving money">
+              </div>
+              <span class="summary-tag">Expense</span>
+              <h3 class="card-title">Logged spending</h3>
+              <p class="card-number">176 THB</p>
+              <p class="card-text">Daily purchases are recorded clearly, helping the user understand spending rhythm
+                without extra friction.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Visual Progress</span>
+              <h2 class="section-title">Weekly productivity rhythm</h2>
+            </div>
+            <p class="section-text">Use the weekly chart to spot busy days, lighter days, and the pace you're keeping across the week.</p>
+          </div>
+
+          <div class="card chart-card">
+            <div class="chart-bars" aria-label="Weekly productivity chart">
+              <div class="chart-column">
+                <span class="chart-bar h-72"></span>
+                <strong>Mon</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-88"></span>
+                <strong>Tue</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-64"></span>
+                <strong>Wed</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-92"></span>
+                <strong>Thu</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-78"></span>
+                <strong>Fri</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-58"></span>
+                <strong>Sat</strong>
+              </div>
+              <div class="chart-column">
+                <span class="chart-bar h-84"></span>
+                <strong>Sun</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="timer-section">
+        <div class="container section-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Pomodoro Timer</span>
+              <h2 class="section-title">Focus with a simple 25-minute session</h2>
+            </div>
+            <p class="section-text">Start the timer when you want one simple focus block for study, admin work, or a quick reset.</p>
+          </div>
+
+          <div class="card timer-card">
+            <p class="timer-label">Focus Session</p>
+            <p class="timer-display" id="timerDisplay">25:00</p>
+            <p class="timer-status" id="timerStatus">Ready to begin a calm and focused session.</p>
+
+            <div class="timer-buttons">
+              <button class="timer-btn primary-btn" id="startTimer" type="button">Start</button>
+              <button class="timer-btn secondary-btn alt-btn" id="pauseTimer" type="button">Pause</button>
+              <button class="timer-btn ghost-btn" id="resetTimer" type="button">Reset</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="footer-kicker">Piggy Planner</span>
+        <p class="footer-text">Piggy Planner Progress</p>
+        <p class="footer-note">Track weekly momentum, review simple summaries, and use the timer when you need focused time.</p>
+        <p class="footer-copy">&copy; 2026 Piggy Planner. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/timer.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>
+
